@@ -4,24 +4,16 @@
 
 using namespace std;
 
-vector<int> *node;
+vector<int> node[1001];
+queue<int> q;
+bool visited[1001];
 int n, m;
 
 int main()
 {
 	int c = 0;
-	queue<int> q;
-	queue<int> start;
-	bool* visited;
 
 	cin >> n >> m;
-	node = new vector<int>[n + 1];
-	visited = new bool[n + 1];
-	for (int i = 1; i < n + 1; i++)
-	{
-		visited[i] = false;
-		start.push(i);
-	}
 
 	int n1, n2;
 	for (int i = 0; i < m; i++)
@@ -32,10 +24,16 @@ int main()
 		node[n2].push_back(n1);
 	}
 
-	while (!start.empty())
+	for (int i = 1; i <= n; i++)
 	{
-		q.push(start.front());
-		visited[start.front()] = true;
+		if (visited[i])
+		{
+			continue;
+		}
+
+		c++;
+		q.push(i);
+		visited[i] = true;
 
 		while (!q.empty())
 		{
@@ -43,22 +41,13 @@ int main()
 			{
 				if (!visited[l])
 				{
-					visited[l] = true;
 					q.push(l);
+					visited[l] = true;
 				}
 			}
 			q.pop();
 		}
-
-		start.pop();
-		while (!start.empty() && visited[start.front()])
-		{
-			start.pop();
-		}
-		c++;
 	}
 
 	cout << c << endl;
-	delete[] node;
-	delete[] visited;
 }
