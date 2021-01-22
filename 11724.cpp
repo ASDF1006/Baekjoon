@@ -47,7 +47,6 @@ int main()
 					q.push(l);
 				}
 			}
-
 			q.pop();
 		}
 
