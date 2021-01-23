@@ -26,26 +26,24 @@ int main()
 
 	for (int i = 1; i <= n; i++)
 	{
-		if (visited[i])
+		if (!visited[i])
 		{
-			continue;
-		}
+			c++;
+			q.push(i);
+			visited[i] = true;
 
-		c++;
-		q.push(i);
-		visited[i] = true;
-
-		while (!q.empty())
-		{
-			for (int l : node[q.front()])
+			while (!q.empty())
 			{
-				if (!visited[l])
+				for (int l : node[q.front()])
 				{
-					q.push(l);
-					visited[l] = true;
+					if (!visited[l])
+					{
+						q.push(l);
+						visited[l] = true;
+					}
 				}
+				q.pop();
 			}
-			q.pop();
 		}
 	}
 
