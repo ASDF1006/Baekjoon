@@ -18,9 +18,6 @@
     <ClCompile Include="16637.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="1040.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="14888.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -52,6 +49,15 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="2178.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="1697.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="7562.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="5427.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
